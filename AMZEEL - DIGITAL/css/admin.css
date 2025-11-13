@@ -1,0 +1,322 @@
+/* تنسيقات لوحة التحكم */
+.admin-body {
+    display: flex;
+    background: #0f0f0f;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.admin-nav {
+    width: 280px;
+    background: #1a1a1a;
+    border-left: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-nav-header {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid #333;
+}
+
+.admin-nav-header h2 {
+    color: #6c63ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.admin-nav-header p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.admin-nav-menu {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #252525;
+    color: #6c63ff;
+    border-right-color: #6c63ff;
+}
+
+.nav-item span:first-child {
+    font-size: 1.2rem;
+}
+
+.admin-nav-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #333;
+}
+
+.admin-nav-footer .language-switcher {
+    display: flex;
+    background: #252525;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.admin-nav-footer .lang-btn {
+    flex: 1;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-nav-footer .lang-btn.active {
+    background: #6c63ff;
+    color: white;
+}
+
+.back-to-site {
+    display: block;
+    text-align: center;
+    background: #252525;
+    color: #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-to-site:hover {
+    background: #6c63ff;
+    color: white;
+}
+
+.admin-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+}
+
+.admin-header h1 {
+    color: white;
+    margin: 0;
+}
+
+.admin-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.admin-user {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #252525;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    color: #ccc;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    background: #6c63ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+/* الأقسام */
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+/* بطاقات الإحصائيات */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #252525;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: #6c63ff;
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.stat-info h3 {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.stat-change {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+}
+
+.stat-change.positive {
+    background: #4ade80;
+    color: #052e16;
+}
+
+/* الجداول */
+.recent-orders,
+.products-table {
+    background: #252525;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.recent-orders h2,
+.section-header h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.orders-table,
+.products-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: right;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    color: #ccc;
+    font-weight: 600;
+    background: #1a1a1a;
+}
+
+td {
+    color: #ccc;
+}
+
+.status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status.completed {
+    background: #4ade80;
+    color: #052e16;
+}
+
+.status.pending {
+    background: #fbbf24;
+    color: #451a03;
+}
+
+.status.active {
+    background: #6c63ff;
+    color: white;
+}
+
+.product-thumb {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background: #6c63ff;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #5a52d5;
+}
+
+.btn-delete {
+    background: #ff6b6b;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #e55a5a;
+}

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMZEEL DIGITAL - حلول رقمية شاملة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* رأس الصفحة */
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* القائمة الأفقية */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* تنسيقات السلة */
+        .cart-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .cart-icon i {
+            font-size: 18px;
+            color: white;
+        }
+        
+        .cart-count {
+            background: #ff4444;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* زر تسجيل الدخول والإدارة */
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+            margin-right: 20px;
+        }
+
+        .btn-login {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login:hover {
+            background: white;
+            color: #1a2a6c;
+        }
+
+        .btn-admin {
+            background: #ff4444;
+            border: 2px solid #ff4444;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-admin:hover {
+            background: #ff6666;
+            border-color: #ff6666;
+        }
+        
+        /* باقي التنسيقات */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #fdbb2d;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #ffcc44;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #fdbb2d;
+            color: #fdbb2d;
+        }
+        
+        .btn-outline:hover {
+            background: #fdbb2d;
+            color: #333;
+        }
+        
+        .content {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2a6c;
+        }
+        
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .service {
+            flex: 0 0 30%;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+        }
+        
+        .service.web-design::before {
+            background: linear-gradient(135deg, #4cc9f0, #4361ee);
+        }
+        
+        .service.digital-marketing::before {
+            background: linear-gradient(135deg, #f72585, #7209b7);
+        }
+        
+        .service.app-development::before {
+            background: linear-gradient(135deg, #43aa8b, #577590);
+        }
+        
+        .service:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1a2a6c;
+        }
+
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #1a2a6c;
+        }
+        
+        /* قسم المنتجات الرقمية */
+        .digital-products {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .category-tab {
+            padding: 12px 24px;
+            background: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .category-tab.active {
+            background: #1a2a6c;
+            color: white;
+        }
+        
+        .category-tab:hover:not(.active) {
+            background: #e2e8f0;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            position: relative;
+        }
+        
+        .product-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        /* ألوان مختلفة لكل قسم */
+        .category-books { background: linear-gradient(135deg, #4361ee, #3a0ca3); }
+        .category-templates { background: linear-gradient(135deg, #f72585, #7209b7); }
+        .category-web { background: linear-gradient(135deg, #4cc9f0, #4361ee); }
+        .category-games { background: linear-gradient(135deg, #f8961e, #f3722c); }
+        .category-apps { background: linear-gradient(135deg, #43aa8b, #577590); }
+        .category-courses { background: linear-gradient(135deg, #9d4edd, #5a189a); }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1e293b;
+            height: 50px;
+            overflow: hidden;
+        }
+        
+        .product-description {
+            color: #64748b;
+            margin-bottom: 15px;
+            font-size: 14px;
+            height: 60px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a2a6c;
+        }
+        
+        .price-currency {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #94a3b8;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+        
+        /* قسم الباقات */
+        .packages {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .package-card.featured {
+            border-color: #fdbb2d;
+            transform: scale(1.05);
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .package-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fdbb2d;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .package-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #1a2a6c;
+        }
+        
+        .package-price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+        }
+        
+        .package-price-currency {
+            font-size: 18px;
+            color: #64748b;
+        }
+        
+        .package-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-features li:before {
+            content: "✓";
+            color: #10b981;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        .contact {
+            background: #1a2a6c;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+
+        /* لوحة التحكم */
+        .admin-panel {
+            display: none;
+            background: white;
+            padding: 40px 0;
+            min-height: 500px;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1a2a6c;
+            margin-bottom: 10px;
+        }
+
+        .admin-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .action-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .action-card i {
+            font-size: 40px;
+            color: #1a2a6c;
+            margin-bottom: 15px;
+        }
+
+        /* نافذة تسجيل الدخول */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            width: 400px;
+            max-width: 90%;
+        }
+
+        .login-form h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a2a6c;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .service {
+                flex: 0 0 100%;
+            }
+            
+            .package-card.featured {
+                transform: scale(1);
+            }
+            
+            .package-card.featured:hover {
+                transform: translateY(-5px);
+            }
+            
+            .category-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-tab {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+
+            .auth-buttons {
+                margin-right: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">AMZEEL DIGITAL</div>
+                <nav>
+                    <ul>
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">خدماتنا</a></li>
+                        <li><a href="#">المتجر</a></li>
+                        <li><a href="#">الباقات</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                        <!-- خانة السلة -->
+                        <li>
+                            <a href="#" class="cart-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                                السلة
+                                <span class="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#" class="btn-login" id="loginBtn">تسجيل الدخول</a>
+                    <a href="#" class="btn-admin" id="adminBtn" style="display:none;">لوحة التحكم</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- نافذة تسجيل الدخول -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-form">
+            <h3>تسجيل الدخول للإدارة</h3>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="اسم المستخدم" value="admin">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="كلمة المرور" value="admin123">
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn" id="submitLogin">دخول</button>
+                <button type="button" class="btn btn-outline" id="closeLogin">إلغاء</button>
+            </div>
+            <div style="margin-top: 15px; font-size: 12px; color: #666; text-align: center;">
+                بيانات الدخول الافتراضية:<br>
+                المستخدم: admin | كلمة المرور: admin123
+            </div>
+        </div>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div id="mainContent">
+        <section class="hero">
+            <div class="container">
+                <h1>AMZEEL DIGITAL</h1>
+                <p>حلول رقمية شاملة لجميع احتياجاتك.</p>
+                <a href="#" class="btn">اكتشف خدماتنا</a>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <h2>خدماتنا الرقمية</h2>
+                <p>نقدم مجموعة واسعة من الخدمات الرقمية المتكاملة لتلبية جميع احتياجاتك</p>
+                
+                <div class="services">
+                    <div class="service web-design">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>تصميم المواقع</h3>
+                        <p>تصميم مواقع ويب احترافية وجذابة تتوافق مع أحدث معايير التصميم</p>
+                    </div>
+                    <div class="service digital-marketing">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>التسويق الرقمي</h3>
+                        <p>استراتيجيات تسويق رقمية فعالة لتعزيز وجودك على الإنترنت</p>
+                    </div>
+                    <div class="service app-development">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>تطبيقات الجوال</h3>
+                        <p>تطوير تطبيقات جوال مبتكرة لأنظمة iOS و Android</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المنتجات الرقمية الكامل -->
+        <section class="digital-products">
+            <div class="container">
+                <h2>منتجاتنا الرقمية المميزة</h2>
+                <p>اكتشف مجموعة منتجاتنا الرقمية المصممة خصيصاً لنجاحك</p>
+                
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">الكل</button>
+                    <button class="category-tab" data-category="books">الكتب الإلكترونية</button>
+                    <button class="category-tab" data-category="templates">قوالب Excel</button>
+                    <button class="category-tab" data-category="web">تطوير المواقع</button>
+                    <button class="category-tab" data-category="games">الألعاب التعليمية</button>
+                    <button class="category-tab" data-category="apps">تطبيقات الجوال</button>
+                    <button class="category-tab" data-category="courses">الدورات التدريبية</button>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- كتب إلكترونية -->
+                    <div class="product-card" data-category="books">
+                        <div class="product-image category-books" style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category category-books">كتب إلكترونية</span>
+                            <h3 class="product-title">دليل التسويق الرقمي الشامل</h3>
+                            <p class="product-description">كتاب شامل يغطي جميع استراتيجيات التسويق الرقمي مع أمثلة عملية</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">19.99</span>
+                                    <span class="price-currency">$</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="btn btn-small">شراء</a>
+                                    <a href="#" class="btn btn-small btn-outline">معاينة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- قوالب Excel -->
+                    <div class="product-card" data-category="templates">
+                        <div class="product-image category-templates" style="background-image: url('https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category category-templates">قوالب Excel</span>
+                            <h3 class="product-title">حزمة القوالب المالية المتقدمة</h3>
+                            <p class="product-description">10 قوالب Excel مالية متقدمة للمحاسبة وإدارة الميزانيات</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">24.99</span>
+                                    <span class="price-currency">$</span>
+                                    <span class="original-price">39.99$</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="btn btn-small">شراء</a>
+                                    <a href="#" class="btn btn-small btn-outline">معاينة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- تطوير المواقع -->
+                    <div class="product-card" data-category="web">
+                        <div class="product-image category-web" style="background-image: url('https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category category-web">تطوير المواقع</span>
+                            <h3 class="product-title">قوالب ويب متجاوبة متكاملة</h3>
+                            <p class="product-description">مجموعة قوالب ويب احترافية متجاوبة مع جميع الأجهزة</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">49.99</span>
+                                    <span class="price-currency">$</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="btn btn-small">شراء</a>
+                                    <a href="#" class="btn btn-small btn-outline">معاينة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ألعاب تعليمية -->
+                    <div class="product-card" data-category="games">
+                        <div class="product-image category-games" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category category-games">ألعاب تعليمية</span>
+                            <h3 class="product-title">لعبة تعلم البرمجة للأطفال</h3>
+                            <p class="product-description">لعبة تفاعلية لتعليم أساسيات البرمجة للأطفال بطريقة مسلية</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">14.99</span>
+                                    <span class="price-currency">$</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="btn btn-small">شراء</a>
+                                    <a href="#" class="btn btn-small btn-outline">معاينة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- تطبيقات جوال -->
+                    <div class="product-card" data-category="apps">
+                        <div class="product-image category-apps" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                            <i class="fas fa-mobile"></i>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category category-apps">تطبيقات الجوال</span>
+                            <h3 class="product-title">تطبيق إدارة المهام الذكية</h3>
+                            <p class="product-description">تطبيق متكامل لإدارة المهام مع ميزات التذكير والتقارير</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">29.99</span>
+                                    <span class="price-currency">$</span>
+                                    <span class="original-price">44.99$</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="btn btn-small">شراء</a>
+                                    <a href="#" class="btn btn-small btn-outline">معاينة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- دورات تدريبية -->
+                    <div class="product-card" data-category="courses">
+                        <div class="product-image category-courses" style="background-image: url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category category-courses">دورات تدريبية</span>
+                            <h3 class="product-title">دورة تطوير الويب المتقدم</h3>
+                            <p class="product-description">دورة شاملة لتطوير الويب تغطي أحدث التقنيات والأطر</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">79.99</span>
+                                    <span class="price-currency">$</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="btn btn-small">شراء</a>
+                                    <a href="#" class="btn btn-small btn-outline">معاينة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- منتج إضافي 1 -->
+                    <div class="product-card" data-category="books">
+                        <div class="product-image category-books" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category category-books">كتب إلكترونية</span>
+                            <h3 class="product-title">استراتيجيات النجاح في العمل الحر</h3>
+                            <p class="product-description">دليل عملي للعمل الحر وتحقيق الدخل عبر الإنترنت</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">22.99</span>
+                                    <span class="price-currency">$</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="btn btn-small">شراء</a>
+                                    <a href="#" class="btn btn-small btn-outline">معاينة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- منتج إضافي 2 -->
+                    <div class="product-card" data-category="templates">
+                        <div class="product-image category-templates" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category category-templates">قوالب Excel</span>
+                            <h3 class="product-title">قوالب إدارة المشاريع</h3>
+                            <p class="product-description">مجموعة قوالب متكاملة لإدارة وتتبع المشاريع</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">34.99</span>
+                                    <span class="price-currency">$</span>
+                                    <span class="original-price">49.99$</span>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="#" class="btn btn-small">شراء</a>
+                                    <a href="#" class="btn btn-small btn-outline">معاينة</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الباقات -->
+        <section class="packages">
+            <div class="container">
+                <h2>باقات الخبرة المميزة</h2>
+                <p>اختر الباقة التي تناسب احتياجاتك واستفد من عروضنا الحصرية</p>
+                
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <h3 class="package-title">الباقة الأساسية</h3>
+                        <div class="package-price">19.99<span class="package-price-currency">$/شهر</span></div>
+                        <ul class="package-features">
+                            <li>5 منتجات رقمية شهرياً</li>
+                            <li>دعم فني عبر البريد الإلكتروني</li>
+                            <li>وصول لمكتبة القوالب الأساسية</li>
+                            <li>تحديثات منتظمة</li>
+                        </ul>
+                        <a href="#" class="btn">اشترك الآن</a>
+                    </div>
+                    
+                    <div class="package-card featured">
+                        <div class="package-badge">الأكثر طلباً</div>
+                        <h3 class="package-title">باقة المحترفين</h3>
+                        <div class="package-price">39.99<span class="package-price-currency">$/شهر</span></div>
+                        <ul class="package-features">
+                            <li>15
