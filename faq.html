@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة - Amzeel Digital Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            margin: 10px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border: none;
+            width: 100%;
+            text-align: right;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            padding: 15px 20px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Amzeel Store</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="shop.html">المتجر</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="faq-page">
+        <section class="faq-section">
+            <h2>الأسئلة الشائعة</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        كيف يمكنني الطلب؟
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>يمكنك الطلب عن طريق تصفح المنتجات، إضافتها إلى سلة التسوق، ثم إكمال عملية الشراء.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        ما هي طرق الدفع المتاحة؟
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نحن نقبل الدفع بواسطة البطاقات الائتمانية، PayPal، والتحويل البنكي.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        كم تستغرق وقت التوصيل؟
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>مدة التوصيل من 3 إلى 7 أيام عمل حسب الموقع.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        هل يمكنني إرجاع المنتج؟
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، يمكنك إرجاع المنتج خلال 14 يوم من الاستلام بشروط معينة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Amzeel Digital Store. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentNode;
+                item.classList.toggle('active');
+                button.querySelector('span').textContent = item.classList.contains('active') ? '-' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

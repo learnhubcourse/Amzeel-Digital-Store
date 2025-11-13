@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المنتجات - Amzeel Digital Store</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .admin-header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+        }
+        .admin-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin-main {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: white;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background: #4a6278;
+        }
+        .content {
+            padding: 20px;
+        }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .products-table {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .products-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .products-table th, .products-table td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        .products-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        .action-btn {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .edit-btn { background: #28a745; color: white; }
+        .delete-btn { background: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <nav class="admin-nav">
+            <h1>إدارة المنتجات</h1>
+            <a href="../index.html" style="color: white;">العودة للموقع</a>
+        </nav>
+    </header>
+
+    <div class="admin-main">
+        <aside class="sidebar">
+            <a href="dashboard.html">الرئيسية</a>
+            <a href="products.html" class="active">إدارة المنتجات</a>
+            <a href="orders.html">الطلبات</a>
+            <a href="customers.html">العملاء</a>
+            <a href="../index.html">الخروج</a>
+        </aside>
+
+        <main class="content">
+            <div class="page-header">
+                <h2>قائمة المنتجات</h2>
+                <button class="btn" onclick="showAddProductForm()">إضافة منتج جديد</button>
+            </div>
+
+            <div class="products-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الصورة</th>
+                            <th>اسم المنتج</th>
+                            <th>السعر</th>
+                            <th>الفئة</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="../images/product1.jpg" alt="منتج" style="width: 50px; height: 50px; object-fit: cover;"></td>
+                            <td>منتج رقم 1</td>
+                            <td>$99.99</td>
+                            <td>إلكترونيات</td>
+                            <td>متوفر</td>
+                            <td>
+                                <button class="action-btn edit-btn">تعديل</button>
+                                <button class="action-btn delete-btn">حذف</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="../images/product2.jpg" alt="منتج" style="width: 50px; height: 50px; object-fit: cover;"></td>
+                            <td>منتج رقم 2</td>
+                            <td>$149.99</td>
+                            <td>برمجيات</td>
+                            <td>متوفر</td>
+                            <td>
+                                <button class="action-btn edit-btn">تعديل</button>
+                                <button class="action-btn delete-btn">حذف</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showAddProductForm() {
+            alert('نموذج إضافة منتج جديد سيظهر هنا');
+            // في التطبيق الحقيقي، سيظهر نموذج popup
+        }
+    </script>
+</body>
+</html>

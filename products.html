@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنتجات - Amzeel Digital Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Amzeel Store</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="shop.html">المتجر</a></li>
+                <li><a href="products.html" class="active">المنتجات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="products-page">
+        <section class="products-section">
+            <h2>جميع المنتجات</h2>
+            <div class="filter-section">
+                <select id="categoryFilter">
+                    <option value="all">جميع الفئات</option>
+                    <option value="electronics">إلكترونيات</option>
+                    <option value="software">برمجيات</option>
+                    <option value="services">خدمات</option>
+                </select>
+                <input type="text" id="searchBox" placeholder="ابحث عن منتج...">
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- سيتم إضافة المنتجات dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Amzeel Digital Store. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="js/products.js"></script>
+</body>
+</html>

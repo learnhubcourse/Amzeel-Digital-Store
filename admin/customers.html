@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة العملاء - Amzeel Digital Store</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .admin-header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+        }
+        .admin-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .admin-main {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: white;
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background: #4a6278;
+        }
+        .content {
+            padding: 20px;
+        }
+        .customers-table {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .customers-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .customers-table th, .customers-table td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        .customers-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <nav class="admin-nav">
+            <h1>إدارة العملاء</h1>
+            <a href="../index.html" style="color: white;">العودة للموقع</a>
+        </nav>
+    </header>
+
+    <div class="admin-main">
+        <aside class="sidebar">
+            <a href="dashboard.html">الرئيسية</a>
+            <a href="products.html">إدارة المنتجات</a>
+            <a href="orders.html">الطلبات</a>
+            <a href="customers.html" class="active">العملاء</a>
+            <a href="../index.html">الخروج</a>
+        </aside>
+
+        <main class="content">
+            <h2>قاعدة العملاء</h2>
+            
+            <div class="customers-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اسم العميل</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>الهاتف</th>
+                            <th>عدد الطلبات</th>
+                            <th>تاريخ التسجيل</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>أحمد محمد</td>
+                            <td>ahmed@example.com</td>
+                            <td>+966 123 456 789</td>
+                            <td>5</td>
+                            <td>2024-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>فاطمة عبدالله</td>
+                            <td>fatima@example.com</td>
+                            <td>+966 123 456 788</td>
+                            <td>3</td>
+                            <td>2024-01-05</td>
+                        </tr>
+                        <tr>
+                            <td>خالد السعدي</td>
+                            <td>khaled@example.com</td>
+                            <td>+966 123 456 787</td>
+                            <td>2</td>
+                            <td>2024-01-10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

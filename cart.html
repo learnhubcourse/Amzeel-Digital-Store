@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة التسوق - Amzeel Digital Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Amzeel Store</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="shop.html">المتجر</a></li>
+                <li><a href="cart.html" class="active">سلة التسوق</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-page">
+        <section class="cart-section">
+            <h2>سلة التسوق</h2>
+            <div class="cart-container">
+                <div class="cart-items" id="cartItems">
+                    <div class="empty-cart">
+                        <p>سلة التسوق فارغة</p>
+                        <a href="shop.html" class="continue-shopping">مواصلة التسوق</a>
+                    </div>
+                </div>
+                <div class="cart-summary">
+                    <h3>ملخص الطلب</h3>
+                    <div class="summary-details">
+                        <p>عدد المنتجات: <span id="itemsCount">0</span></p>
+                        <p>المجموع: <span id="totalPrice">$0.00</span></p>
+                        <button class="checkout-btn">إتمام الشراء</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Amzeel Digital Store. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>
