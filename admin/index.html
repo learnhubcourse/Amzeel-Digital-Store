@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم AMZEEL DIGITAL</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+    <!-- شريط التنقل للوحة التحكم -->
+    <nav class="admin-nav">
+        <div class="admin-nav-header">
+            <h2>AMZEEL DIGITAL</h2>
+            <p>لوحة التحكم</p>
+        </div>
+        <div class="admin-nav-menu">
+            <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                <span>📊</span>
+                <span data-ar="الإحصائيات" data-en="Dashboard">الإحصائيات</span>
+            </a>
+            <a href="#products" class="nav-item" data-section="products">
+                <span>🛍️</span>
+                <span data-ar="إدارة المنتجات" data-en="Products">إدارة المنتجات</span>
+            </a>
+            <a href="#orders" class="nav-item" data-section="orders">
+                <span>📦</span>
+                <span data-ar="الطلبات" data-en="Orders">الطلبات</span>
+            </a>
+            <a href="#music" class="nav-item" data-section="music">
+                <span>🎵</span>
+                <span data-ar="إدارة الموسيقى" data-en="Music">إدارة الموسيقى</span>
+            </a>
+            <a href="#settings" class="nav-item" data-section="settings">
+                <span>⚙️</span>
+                <span data-ar="الإعدادات" data-en="Settings">الإعدادات</span>
+            </a>
+        </div>
+        <div class="admin-nav-footer">
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="ar">العربية</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+            <a href="../index.html" class="back-to-site" data-ar="العودة للموقع" data-en="Back to Site">العودة للموقع</a>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="admin-main">
+        <!-- شريط العنوان -->
+        <header class="admin-header">
+            <h1 data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</h1>
+            <div class="admin-actions">
+                <button class="btn btn-primary" data-ar="+ إضافة منتج" data-en="+ Add Product">+ إضافة منتج</button>
+                <div class="admin-user">
+                    <span data-ar="مرحباً، أحمد" data-en="Welcome, Ahmed">مرحباً، أحمد</span>
+                    <div class="user-avatar">A</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- قسم الإحصائيات -->
+        <section id="dashboard" class="admin-section active">
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-info">
+                        <h3 data-ar="الإيرادات" data-en="Revenue">الإيرادات</h3>
+                        <p class="stat-number">$5,240</p>
+                        <span class="stat-change positive">+12%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-info">
+                        <h3 data-ar="الطلبات" data-en="Orders">الطلبات</h3>
+                        <p class="stat-number">124</p>
+                        <span class="stat-change positive">+8%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                        <h3 data-ar="العملاء" data-en="Customers">العملاء</h3>
+                        <p class="stat-number">892</p>
+                        <span class="stat-change positive">+15%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎵</div>
+                    <div class="stat-info">
+                        <h3 data-ar="مقاطع الموسيقى" data-en="Music Tracks">مقاطع الموسيقى</h3>
+                        <p class="stat-number">67</p>
+                        <span class="stat-change positive">+5%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الطلبات الحديثة -->
+            <div class="recent-orders">
+                <h2 data-ar="الطلبات الحديثة" data-en="Recent Orders">الطلبات الحديثة</h2>
+                <div class="orders-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-ar="رقم الطلب" data-en="Order ID">رقم الطلب</th>
+                                <th data-ar="العميل" data-en="Customer">العميل</th>
+                                <th data-ar="المنتج" data-en="Product">المنتج</th>
+                                <th data-ar="المبلغ" data-en="Amount">المبلغ</th>
+                                <th data-ar="الحالة" data-en="Status">الحالة</th>
+                                <th data-ar="التاريخ" data-en="Date">التاريخ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#00125</td>
+                                <td>محمد أحمد</td>
+                                <td data-ar="قالب موقع" data-en="Website Template">قالب موقع</td>
+                                <td>$49</td>
+                                <td><span class="status completed" data-ar="مكتمل" data-en="Completed">مكتمل</span></td>
+                                <td>2024-01-15</td>
+                            </tr>
+                            <tr>
+                                <td>#00124</td>
+                                <td>سارة خالد</td>
+                                <td data-ar="Type Beat" data-en="Type Beat">Type Beat</td>
+                                <td>$29</td>
+                                <td><span class="status pending" data-ar="قيد الانتظار" data-en="Pending">قيد الانتظار</span></td>
+                                <td>2024-01-14</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم إدارة المنتجات -->
+        <section id="products" class="admin-section">
+            <div class="section-header">
+                <h2 data-ar="إدارة المنتجات" data-en="Products Management">إدارة المنتجات</h2>
+                <button class="btn btn-primary" data-ar="+ منتج جديد" data-en="+ New Product">+ منتج جديد</button>
+            </div>
+            <div class="products-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-ar="الصورة" data-en="Image">الصورة</th>
+                            <th data-ar="اسم المنتج" data-en="Product Name">اسم المنتج</th>
+                            <th data-ar="السعر" data-en="Price">السعر</th>
+                            <th data-ar="الفئة" data-en="Category">الفئة</th>
+                            <th data-ar="الحالة" data-en="Status">الحالة</th>
+                            <th data-ar="الإجراءات" data-en="Actions">الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="product-thumb">💼</div></td>
+                            <td data-ar="قالب موقع تجاري" data-en="Business Template">قالب موقع تجاري</td>
+                            <td>$49</td>
+                            <td data-ar="قوالب" data-en="Templates">قوالب</td>
+                            <td><span class="status active" data-ar="نشط" data-en="Active">نشط</span></td>
+                            <td>
+                                <button class="btn-edit" data-ar="تعديل" data-en="Edit">تعديل</button>
+                                <button class="btn-delete" data-ar="حذف" data-en="Delete">حذف</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
